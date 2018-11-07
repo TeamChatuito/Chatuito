@@ -18,10 +18,12 @@ export default MainNavigator = createMaterialTopTabNavigator(
             style:{
                 backgroundColor:'white',
                 borderTopWidth:0.2,
-                borderBottomWidth:0.2
+                borderBottomWidth:0.2,
+            
             },
             labelStyle:{
                 color:'black',
+                textDecorationColor:'black'
             },
 
         }

@@ -82,9 +82,11 @@ export default class ChatPersonal extends Component {
         createdAt: now,
         uid: this.user.uid,
         order: -1 * now,
+        person:uid,
         user: message.user,
       });
     });
+    
   }
   render() {
     return (
