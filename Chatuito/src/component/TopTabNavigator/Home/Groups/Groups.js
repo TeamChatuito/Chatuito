@@ -1,13 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import { Text, View, StyleSheet } from "react-native";
-import Backend from "./Backend";
-import { GiftedChat } from 'react-native-gifted-chat';
-import Css from './Css'
-import GroupChat from './GroupChat';
+import React, { Component } from 'react';
+import GroupsList from './GroupsList';
  export default class Group extends Component{
   render(){
+    const {navigate} = this.props.navigation;
     return(
-      <Text onPress={()=>this.props.navigation.navigate('GroupChatScreen')}>Click Join to Group Chat </Text>
+      <GroupsList navigate={navigate}/>
     )
   }
 }

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { GiftedChat, Avatar } from "react-native-gifted-chat";
+import {View} from 'react-native'
+import { GiftedChat } from "react-native-gifted-chat";
 import firebase from "react-native-firebase";
+import Css from "./Css";
 
-var name, uid, email;
+var uid;
 
 export default class ChatPersonal extends Component {
   constructor(props) {
@@ -90,13 +92,15 @@ export default class ChatPersonal extends Component {
   }
   render() {
     return (
-      <GiftedChat
+      <View style={Css.containerChatPerson}>
+        <GiftedChat
         messages={this.state.messages}
         onSend={this.onSend.bind(this)}
         user={{
           _id: this.user.uid
         }}
       />
+      </View>
     );
   }
 }

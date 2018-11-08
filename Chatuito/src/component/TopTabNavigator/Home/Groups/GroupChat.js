@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { Text, View, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import { View } from "react-native";
 import Backend from "./Backend";
 import { GiftedChat } from 'react-native-gifted-chat';
 import Css from './Css'
@@ -7,6 +7,7 @@ import Css from './Css'
   constructor(props){
     super(props);
     this.state = { name: false };
+    
   }
   state = {
     messages: []
@@ -15,13 +16,15 @@ import Css from './Css'
   componentWillMount() {}
 
   componentDidMount() {
+    const {params} = this.props.navigation.state;
+    const nameGroup = params.nameGroup;
     Backend.loadMessages(message => {
       this.setState(previousState => {
         return {
           messages: GiftedChat.append(previousState.messages, message)
         };
       });
-    });
+    },nameGroup.trim());
   }
   render() {
     return (

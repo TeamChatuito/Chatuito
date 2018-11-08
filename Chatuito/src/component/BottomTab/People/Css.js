@@ -1,11 +1,10 @@
 import {StyleSheet} from 'react-native'
-
+import AppStyles from '../../../Handling/Css'
 export default Css = StyleSheet.create({
     container: {
     flex: 1,
     alignItems: "stretch",
-    marginRight: 10,
-    marginLeft: 10
+    backgroundColor:AppStyles.colors.appScreenColor
   },
   rightButton: {
     marginTop: 10,
@@ -19,7 +18,7 @@ export default Css = StyleSheet.create({
   },
   myFriends: {
     flex: 1,
-    color: "#3A5BB1",
+    color: AppStyles.colors.blue,
     //secondaryColor: '#E9E9E9',
     //grayColor: '#A5A5A5',
     fontSize: 16,

@@ -1,23 +1,23 @@
 import {
     StyleSheet
 } from 'react-native'
-
+import AppStyles from '../../../Handling/Css'
 export default Css = StyleSheet.create({
      container: {
          flex: 1,
          justifyContent: 'center',
          alignItems: 'center',
-         backgroundColor: '#DCDCDC',
+         backgroundColor: AppStyles.colors.appScreenColor,
      },
       nameApp: {
           fontSize: 70,
           marginBottom: 30,
-          color: '#00b5ec',
+          color: AppStyles.colors.appNameColor,
       },
         //Loading
         loading: {
             flex: 1,
-            backgroundColor:'white',
+            backgroundColor: AppStyles.colors.appScreenColor,
             justifyContent: 'center',
             alignItems: 'center'
         },
@@ -27,8 +27,8 @@ export default Css = StyleSheet.create({
         },
         //SignIn
         inputContainer: {
-            borderBottomColor: '#F5FCFF',
-            backgroundColor: '#FFFFFF',
+            borderBottomColor: AppStyles.colors.borderBottomColor,
+            backgroundColor: AppStyles.colors.appScreenColor,
             borderRadius: 30,
             borderBottomWidth: 1,
             width: 250,
@@ -40,7 +40,7 @@ export default Css = StyleSheet.create({
         inputs: {
             height: 45,
             marginLeft: 16,
-            borderBottomColor: '#FFFFFF',
+            borderBottomColor: AppStyles.colors.borderBottomColor,
             flex: 1,
         },
         inputIcon: {
@@ -59,13 +59,13 @@ export default Css = StyleSheet.create({
             borderRadius: 30,
         },
         loginButton: {
-            backgroundColor: "#00b5ec",
+            backgroundColor: AppStyles.colors.buttonColor
         },
         loginText: {
-            color: 'white',
+            color: AppStyles.colors.white,
         },
         wrapperStyleResetPassword: {
-            borderBottomColor: 'black',
+            borderBottomColor: AppStyles.colors.borderBottomColor,
             borderBottomWidth: 1,
             paddingLeft: 10,
             paddingRight: 10,
@@ -81,7 +81,7 @@ export default Css = StyleSheet.create({
             backgroundColor: "#00b5ec",
         },
         signUpText: {
-            color: 'white',
+            color: AppStyles.colors.white,
         },
     }
 

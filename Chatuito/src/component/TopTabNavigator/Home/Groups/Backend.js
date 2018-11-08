@@ -3,13 +3,14 @@ import firebase from "react-native-firebase";
 class Backend {
     uid = "";
     messagesRef = null;
+    
     constructor() {
-
             firebase.auth().onAuthStateChanged(user => {
                 if(user) {
                     this.setUid(user.uid)
                 }else return;
             });
+            
     }
     
     getNameUser(){
@@ -22,8 +23,8 @@ class Backend {
         return this.uid;
     }
     // retrieve the messages from the Backend
-    loadMessages(callback) {
-        this.messagesRef = firebase.database().ref('ChatGroup');
+    loadMessages(callback,nameGroup) {
+        this.messagesRef = firebase.database().ref('ChatGroup/' + nameGroup);
         this.messagesRef.off();
         const onReceive = data => {
             const message = data.val();

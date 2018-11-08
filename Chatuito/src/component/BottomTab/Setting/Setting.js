@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Text,  View} from 'react-native';
 import firebase from 'react-native-firebase'
 import * as AllHandle from '../../../Handling/AuthHandle'
+import Css from './Css';
 export default class Setting extends Component{
     constructor(props){
         super(props);
@@ -26,7 +27,7 @@ export default class Setting extends Component{
     }
     render(){
         return(
-            <View>
+            <View style={Css.container}>
                 <Text >Log Out</Text>
 
             </View>

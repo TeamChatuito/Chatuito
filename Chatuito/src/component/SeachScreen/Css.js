@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native'
+import AppStyles from '../../Handling/Css'
 export default Css = StyleSheet.create({
     container:{
         flex:0.075,
         flexDirection:'row',
-        backgroundColor:'white'
+        backgroundColor:AppStyles.colors.white
     },
     containerSearch:{
         flex:9,

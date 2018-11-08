@@ -1,10 +1,10 @@
 import React from 'react'
 import  {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs'
-import MainNavigator from '../component/BottomTab/Screen/MainNavigator'
-import  People from '../component/BottomTab/Screen/People/People'
-import Camera from '../component/BottomTab/Screen/Camera'
-import Images from '../component/BottomTab/Screen/Images'
-import Setting from '../component/BottomTab/Screen/Setting'
+import MainNavigator from '../component/BottomTab/Main/MainNavigator'
+import  People from '../component/BottomTab/People/People'
+import Camera from '../component/BottomTab/Camera/Camera'
+import Images from '../component/BottomTab/Images/Images'
+import Setting from '../component/BottomTab/Setting/Setting'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 

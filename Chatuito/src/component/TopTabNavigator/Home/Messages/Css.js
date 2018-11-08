@@ -1,14 +1,15 @@
 import {StyleSheet} from 'react-native'
-import { Message } from 'react-native-gifted-chat';
+import AppStyles from '../../../../Handling/Css';
 export default Css = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        backgroundColor: "#ccefff"
-    },
+    
     containerMessages:{
         flex:1,
         backgroundColor:'white',
+    },
+    containerChatPerson:{
+        flex:1,
+        justifyContent:'center',
+        backgroundColor:AppStyles.colors.chatScreen,
     },
     containerItemMess:{
         flex:1,

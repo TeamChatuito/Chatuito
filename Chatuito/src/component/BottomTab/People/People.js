@@ -4,7 +4,6 @@ import {
 } from 'react-native'
 import firebase from 'react-native-firebase'
 import Css from './Css'
-import ChatPersonal from '../../../TopTabNavigator/Home/Messages/ChatPersonal'
 class FlatListItem extends Component{
     constructor(props){
         super(props);
