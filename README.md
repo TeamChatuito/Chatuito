@@ -1,5 +1,6 @@
 ## 	Chatuito
-React-Native Messeger Clone from UIT Team !
+* React-Native Messeger Clone 
+* From UIT Team !
 ## Features
 * React Navigation
 * React Navigation Material Bottom Tabs
