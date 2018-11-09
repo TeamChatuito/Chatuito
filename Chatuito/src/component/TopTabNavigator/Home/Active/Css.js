@@ -4,6 +4,7 @@ import {
 import AppStyles from '../../../../Handling/Css'
 export default Css = StyleSheet.create({
     container: {
-        backgroundColor: AppStyles.colors.appScreenColor
+        backgroundColor: AppStyles.colors.appScreenColor,
+        flex:1,
     }
 })

@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import GroupsItem from './GroupItem';
 import Css from './Css';
 
+
 const data = [
     {
         name: 'React Native Developers Forum',
