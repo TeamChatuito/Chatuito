@@ -10,7 +10,8 @@ export default class ChatPersonal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: []
+      messages: [],
+      online:null
     };
 
     this.user = firebase.auth().currentUser;
@@ -38,10 +39,12 @@ export default class ChatPersonal extends Component {
   getRef() {
     return firebase.database().ref();
   }
+  
 
   listenForItems(chatRef) {
     chatRef.on("value", snap => {
       // get children as an array
+     
       var items = [];
       snap.forEach(child => {
         items.push({
@@ -55,6 +58,7 @@ export default class ChatPersonal extends Component {
           }
         });
       });
+      
 
       this.setState({
         loading: false,
@@ -71,13 +75,32 @@ export default class ChatPersonal extends Component {
     this.chatRefData.off();
   }
 
+
+
   onSend(messages = []) {
     // this.setState({
     //     messages: GiftedChat.append(this.state.messages, messages),
     // });
+    this.getRef().child('/people').on('value',snap=>{
+      snap.forEach(child=>{
+        if(child.val().uid===uid){
+          this.setState({online:child.val().online})
+        }
+      })
+    })
+
+    this.chatRef.on("value", snap => {
+      if (snap.val() === null) {
+        firebase.database().ref().child('chatPerson/' + this.user.uid + '/' + uid).push({
+          uid: uid,
+          name: name,
+          email: email,
+          online : this.state.online,
+        })
+      }
+    });
     messages.forEach(message => {
       var now = new Date().getTime();
-      
       this.chatRef.push({
         _id: now,
         text: message.text,

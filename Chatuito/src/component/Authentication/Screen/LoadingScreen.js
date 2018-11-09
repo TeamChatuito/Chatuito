@@ -7,13 +7,15 @@ export default class LoadingScreen extends Component{
     getRef(){
         return firebase.database().ref();
     }
+    
     componentDidMount(){
+       
         firebase.auth()
             .onAuthStateChanged(user=>{
-               
                 if (user) console.log('user :'+user.email);
-                this.props.navigation.navigate(user?'routerMain':'signIn')});
-                        
+                this.props.navigation.navigate(user?'routerMain':'signIn')
+            });
+        
     }
     render(){
         return(

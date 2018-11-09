@@ -26,12 +26,15 @@ export default class SignUpScreen extends React.Component {
                     user.updateProfile({
                         displayName:name
                     }) 
+                    var now = new Date().getTime();
                     this.getRef()
                         .child("people")
                         .push({
                             email: user.email,
                             uid: user.uid,
                             name:name,
+                            online:1,
+                            lastActive:now
                         });
                     AllHandle._showToastSuccessFail('Registration successful !');
                    

@@ -27,18 +27,11 @@ export default Css = StyleSheet.create({
     containerInfor:{
         flex:6
     },
-    avatar:{
-        width: 40,
-        height: 40,
-        borderRadius: 100/2,
-        marginLeft: 6
-    },
-    nameText:{
-        fontSize:15,
-        color:'black'
-    },
+    avatar:AppStyles.avatar,
+    nameText:AppStyles.nameText,
     messageText:{
-        fontSize:12
+        fontSize:12,
+        marginLeft:10
     },
     containerActive:{
         flex:1
@@ -47,7 +40,17 @@ export default Css = StyleSheet.create({
     containerFlatList:{
         flex:4
     },
-
+    statusDot: {
+        position: 'absolute',
+        bottom: 0,
+        right: 5,
+        width: 16,
+        height: 16,
+        borderRadius: 9,
+        borderWidth: 2,
+        borderColor: AppStyles.colors.white,
+        backgroundColor: AppStyles.colors.onlineGreen
+    }
     
 
 });

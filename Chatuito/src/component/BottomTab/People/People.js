@@ -73,7 +73,6 @@ export default class People extends Component{
                 loading: false
             });
         });
-
     }
     componentWillMount(){
             

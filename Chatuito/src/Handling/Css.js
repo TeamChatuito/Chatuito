@@ -14,6 +14,17 @@ const AppStyles = {
         chatScreen: '#fffff3',
         buttonColor: '#00b5ec',
     },
+    nameText: {
+        fontSize: 15,
+        color: 'black',
+        marginLeft:10
+    },
+    avatar:{
+        width: 40,
+        height: 40,
+        borderRadius: 100/2,
+        marginLeft: 6
+    }
 };
 
 export default AppStyles;
