@@ -4,6 +4,18 @@ export default Css = StyleSheet.create({
         flex:1,
         flexDirection:'column'
     },
+    button: {
+        backgroundColor: 'gray',
+        width: 150,
+        height: 50,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10
+    },
+    buttonText:{
+        color: 'white'
+    },
     containerHeader:{
         flex:1,
         flexDirection:'column',

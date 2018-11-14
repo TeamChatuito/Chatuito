@@ -2,12 +2,16 @@ import React,{Component} from 'react'
 import {Text,View,Image,TextInput,TouchableHighlight,TouchableOpacity} from 'react-native'
 import Css from './Css';
 import Icon from 'react-native-vector-icons/Ionicons'
-
+import firebase from 'react-native-firebase'
 
 export default class SearchHeader extends Component{
     constructor(props){
         super(props);
-        this.state={returnButton:false}
+        let user = firebase.auth().currentUser.photoURL.toString();
+        this.state={
+            returnButton:false,
+            image:user
+        }
     }
 
     // Tạo biến returnButton để thay đổi icon và xử lý navigation
@@ -26,7 +30,7 @@ export default class SearchHeader extends Component{
     }
     render(){
         return(
-            
+
             <View style={Css.container}> 
 
             {this.state.returnButton===false && 
@@ -48,10 +52,9 @@ export default class SearchHeader extends Component{
                     <TextInput style={Css.searchTextInput} placeholder="Search" onFocus={()=>this.handleSearch(false)}/>
                     </View>
                 </TouchableOpacity>}
-
                 <View style={Css.containerAvatar}>
                     <TouchableHighlight activeOpacity={0.75} underlayColor='#a6a6a6' onPress={()=>this.props.navigation.navigate('profile')}>
-                        <Image style={Css.avatarStyle} source={{uri: 'https://www.gravatar.com/avatar/'}}/> 
+                        <Image style={Css.avatarStyle} source={{uri: this.state.image,isStatic:true}}/>
                     </TouchableHighlight>
                 </View>
             </View>

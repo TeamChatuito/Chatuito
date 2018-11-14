@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import {View,Text,ScrollView,Image,TouchableOpacity,TextInput} from 'react-native'
 import Css from './Css';
+let Platform = require('react-native').Platform;
+let ImagePicker = require('react-native-image-picker');
 import Icon from 'react-native-vector-icons/Ionicons'
 import firebase from 'react-native-firebase'
 import * as AuthHandle from '../../Handling/AuthHandle'
@@ -41,6 +43,7 @@ export default class ProfileScreen extends Component{
     constructor(props){
         super(props);
         this.state = {
+            image: null,
             infor: null,
             showProfile: false,
             showEditProfile: false,
@@ -49,14 +52,41 @@ export default class ProfileScreen extends Component{
             dialogVisible: false,
             name:'a'
         }
+        this.chooseImage = this.chooseImage.bind(this);
     }
   
     componentWillMount(){
         this.handleCancel();
         this.setState({name:firebase.auth().currentUser.displayName})
-        
+        this.setState({image:firebase.auth().currentUser.photoURL})
     }
-    
+    chooseImage(){
+        const user = firebase.auth().currentUser;
+        ImagePicker.showImagePicker({noData: true }, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                //If it is iOS, remove 'file://' prefix
+                let source = {uri: response.uri.replace('file://', ''), isStatic: true};
+
+                //If android, don't need to remove the 'file://'' prefix
+                if (Platform.OS === 'android') {
+                    source = {uri: response.uri, isStatic: true};
+                }
+                this.setState({image: response.uri});
+                {console.log("Image "+this.state.image)}
+                this.updateImage()
+            }
+        });
+    }
     showProfile() {
         this.state.showProfile?this.setState({showProfile:false}):this.setState({showProfile:true})
     }
@@ -64,7 +94,15 @@ export default class ProfileScreen extends Component{
     showEditProfile(){
         this.state.showEditProfile?this.setState({showEditProfile:false}):this.setState({showEditProfile:true})
     }
-
+    updateImage(){
+        const user = firebase.auth().currentUser;
+        if(this.state.image){
+            user.updateProfile({photoURL:this.state.image.trim()}).then(()=>{
+                AuthHandle._showToastSuccessFail('Update Image Success');
+            })
+        }
+        {console.log(this.state.image)}
+    }
     updateProfile(){
         const user = firebase.auth().currentUser;
         if(this.state.newName){
@@ -102,9 +140,13 @@ export default class ProfileScreen extends Component{
             <ScrollView style={Css.container}>
                 <View style={Css.containerHeader}>
                     <View style={Css.containerAvatar}>
-                         <Image style={Css.Avatar} source={{uri:'https://www.gravatar.com/avatar/'}}/>
+                        {this.state.image?<Image style={Css.Avatar} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.Avatar} source={{uri:'https://www.gravatar.com/avatar/'}}/>}
+                        {console.log(this.state.image.uri)}
+                        <TouchableOpacity style={Css.button} onPress={this.chooseImage}>
+                            <Text style={Css.buttonText}>Choose Images...</Text>
+                        </TouchableOpacity>
                     </View>
-                    
+
                     <Text style={Css.name}>{this.state.name}</Text>
                 </View>
                 <View style={Css.containerBody}>
