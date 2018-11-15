@@ -29,6 +29,9 @@ export default class SearchHeader extends Component{
         }
     }
     render(){
+        const { navigation } = this.props;
+        let image = navigation.getParam('image',this.state.image)
+        {console.log("des "+image)}
         return(
 
             <View style={Css.container}> 
@@ -54,7 +57,7 @@ export default class SearchHeader extends Component{
                 </TouchableOpacity>}
                 <View style={Css.containerAvatar}>
                     <TouchableHighlight activeOpacity={0.75} underlayColor='#a6a6a6' onPress={()=>this.props.navigation.navigate('profile')}>
-                        <Image style={Css.avatarStyle} source={{uri: this.state.image,isStatic:true}}/>
+                        <Image style={Css.avatarStyle} source={{uri: image.toString(),isStatic:true}}/>
                     </TouchableHighlight>
                 </View>
             </View>

@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import firebase from 'react-native-firebase'
 import * as AuthHandle from '../../Handling/AuthHandle'
 import Dialog from 'react-native-dialog'
-
+import SearchHeader from '../SeachScreen/SearchHeader'
 class  Item extends Component{
     render(){
         return(
@@ -82,7 +82,6 @@ export default class ProfileScreen extends Component{
                     source = {uri: response.uri, isStatic: true};
                 }
                 this.setState({image: response.uri});
-                {console.log("Image "+this.state.image)}
                 this.updateImage()
             }
         });
@@ -95,13 +94,18 @@ export default class ProfileScreen extends Component{
         this.state.showEditProfile?this.setState({showEditProfile:false}):this.setState({showEditProfile:true})
     }
     updateImage(){
+        const { navigation } = this.props;
         const user = firebase.auth().currentUser;
         if(this.state.image){
             user.updateProfile({photoURL:this.state.image.trim()}).then(()=>{
                 AuthHandle._showToastSuccessFail('Update Image Success');
             })
         }
-        {console.log(this.state.image)}
+        this.props.navigation.push('routerMain', {
+            image: this.state.image
+        //={console.log(this.state.image)}
+        })
+        {console.log("link "+this.state.image)}
     }
     updateProfile(){
         const user = firebase.auth().currentUser;
