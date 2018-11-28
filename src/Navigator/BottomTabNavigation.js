@@ -28,10 +28,10 @@ export default BottomTabNavigator = createMaterialBottomTabNavigator(
                 tabBarIcon:({tintColor})=>(<Icon name="md-camera" size={25} color={tintColor} />)
             }
         },
-        Image:{
+        Location:{
             screen:Images,
             navigationOptions:{
-                tabBarIcon:({tintColor})=>(<Icon name="md-images" size={25} color={tintColor} />)
+                tabBarIcon:({tintColor})=>(<Icon name="md-map" size={25} color={tintColor} />)
             }
         },
         Setting:{
