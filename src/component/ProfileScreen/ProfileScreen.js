@@ -145,7 +145,6 @@ export default class ProfileScreen extends Component{
                 <View style={Css.containerHeader}>
                     <View style={Css.containerAvatar}>
                         {this.state.image?<Image style={Css.Avatar} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.Avatar} source={{uri:'https://www.gravatar.com/avatar/'}}/>}
-                        {console.log(this.state.image.uri)}
                         <TouchableOpacity style={Css.button} onPress={this.chooseImage}>
                             <Text style={Css.buttonText}>Choose Images...</Text>
                         </TouchableOpacity>

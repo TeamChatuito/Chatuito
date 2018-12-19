@@ -7,7 +7,8 @@ import firebase from 'react-native-firebase'
 export default class SearchHeader extends Component{
     constructor(props){
         super(props);
-        let user = firebase.auth().currentUser.photoURL.toString();
+        let user = firebase.auth().currentUser.photoURL?firebase.auth().currentUser.photoURL.toString():null;
+        console.log('user '+user)
         this.state={
             returnButton:false,
             image:user
@@ -29,13 +30,12 @@ export default class SearchHeader extends Component{
         }
     }
     render(){
+        {console.log('render')}
         const { navigation } = this.props;
-        let image = navigation.getParam('image',this.state.image)
-        {console.log("des "+image)}
+        this.state.image = navigation.getParam('image',this.state.image)
+        {console.log("des "+this.state.image)}
         return(
-
             <View style={Css.container}>
-
                 {this.state.returnButton===false &&
                 <TouchableOpacity style={Css.containerSearch} onPress={()=>this.handleSearch(false)}>
                     <View style={Css.containerIconAndTextInPut}>
@@ -57,7 +57,7 @@ export default class SearchHeader extends Component{
                 </TouchableOpacity>}
                 <View style={Css.containerAvatar}>
                     <TouchableHighlight activeOpacity={0.75} underlayColor='#a6a6a6' onPress={()=>this.props.navigation.navigate('profile')}>
-                        <Image style={Css.avatarStyle} source={{uri: image.toString(),isStatic:true}}/>
+                        {this.state.image?<Image style={Css.avatarStyle} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.avatarStyle} source={{uri:'https://www.gravatar.com/avatar/'}}/>}
                     </TouchableHighlight>
                 </View>
             </View>
