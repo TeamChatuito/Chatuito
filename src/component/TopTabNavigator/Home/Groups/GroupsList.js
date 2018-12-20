@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import GroupsItem from './GroupItem';
 import Css from './Css';
-
+import LinearGradient from 'react-native-linear-gradient'
 
 const data = [
     {
@@ -52,6 +52,11 @@ export default class GroupsList extends Component {
     render() {
         const {navigate} = this.props;
         return (
+            <LinearGradient 
+                            colors={['#004242','#000000']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}} 
+                            style={{flex:1}}>
             <FlatList
                 data={data}
                 contentContainerStyle={Css.list}
@@ -61,6 +66,7 @@ export default class GroupsList extends Component {
                 numColumns={2}
                 renderItem = {({ item }) => {return <GroupsItem item={item} navigate={navigate}/>}}
                   />
+                  </LinearGradient>
         );
     }
 }

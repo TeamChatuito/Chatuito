@@ -25,7 +25,8 @@ export default Css = StyleSheet.create({
 
     fontLoading: {
         fontSize: 30,
-        marginBottom: 20
+        marginBottom: 20,
+        color:'#929292'
     },
     //SignIn
     textInput: {

@@ -5,12 +5,12 @@ export default Css = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        backgroundColor: AppStyles.colors.chatScreen
     },
     card: {
         width: Metrics.screenWidth / 2.5,
         height: Metrics.screenHeight / 3.6,
-        margin: 5
+        margin: 5,
+        backgroundColor:'#ffffff70'
     },
     cardView: {
         width: Metrics.screenWidth / 2.5,
@@ -31,7 +31,7 @@ export default Css = StyleSheet.create({
     },
     last: {
         marginTop: 4,
-        color: AppStyles.colors.grey,
+        color: '#313131',
         fontSize: 12,
         textAlign: 'center'
     },

@@ -43,7 +43,7 @@ export default BottomTabNavigator = createMaterialBottomTabNavigator(
     },
     {
         barStyle:{
-            backgroundColor:'white',
+            backgroundColor:'#001818',
         }
     } ,
     {

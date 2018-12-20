@@ -3,6 +3,7 @@ import { View } from "react-native";
 import Backend from "./Backend";
 import { GiftedChat } from 'react-native-gifted-chat';
 import Css from './Css'
+import LinearGradient from 'react-native-linear-gradient'
  export default class GroupChat extends Component {
   constructor(props){
     super(props);
@@ -29,7 +30,11 @@ import Css from './Css'
   render() {
     return (
         
-      <View style={Css.container}>
+      <LinearGradient 
+      colors={['#00101090','#00101090']}
+      start={{ x: 1, y: 1 }} 
+      end={{x:0,y:0}} 
+      style={Css.container}>
         <GiftedChat
           messages={this.state.messages}
           onSend={message => {
@@ -42,7 +47,7 @@ import Css from './Css'
           loadEarlier
           
         />
-      </View>
+      </LinearGradient>
     );
   }
   componentWillUnmount() {
