@@ -8,16 +8,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     avatarContainer: {
-        backgroundColor:'#699DB6',
-        borderWidth: 2,
+        backgroundColor:'#ffffff20',
+        borderWidth: 5,
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius:200,
+        borderWidth:0.1,
+        width:200,
+        height: 200
     },
     avatar: {
-        borderRadius: 55,
-        borderWidth:10,
+        borderRadius: 200,
+        borderWidth:5,
         width: 200,
-        height: 100,
-    }
+        height: 200,
+        borderColor:'#ffffff50',
+    },
+    textInsideButton:{
+        color:'#929292',
+        fontFamily:'CormorantGaramond-Light',
+        fontSize:20
+    },
 });
 export default styles

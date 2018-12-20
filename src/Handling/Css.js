@@ -16,7 +16,7 @@ const AppStyles = {
     },
     nameText: {
         fontSize: 15,
-        color: 'black',
+        color: '#929292',
         marginLeft:10
     },
     avatar:{

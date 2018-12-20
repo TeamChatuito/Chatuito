@@ -4,6 +4,7 @@ import {
 } from 'react-native'
 import firebase from 'react-native-firebase'
 import Css from './Css'
+import LinearGradient from 'react-native-linear-gradient'
 class FlatListItem extends Component{
     constructor(props){
         super(props);
@@ -84,9 +85,13 @@ export default class People extends Component{
     render(){
         const {navigate} = this.props.navigation;
         return(
-            <View style={Css.container}>
+            <LinearGradient 
+                            colors={['#004242','#000000']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}} 
+                            style={Css.container}>
                 <View style={Css.topGroup}>
-                    <Text style={Css.myFriends}>Everybody</Text>
+                    <Text style={Css.myFriends}>Everyone</Text>
                 </View>
                 <FlatList
                     data={this.state.data}
@@ -97,7 +102,7 @@ export default class People extends Component{
                          );
                     }}
                 />
-            </View>
+            </LinearGradient>
         )
     }
 }

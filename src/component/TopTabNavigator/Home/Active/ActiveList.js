@@ -4,7 +4,7 @@ import UserItem from './UserItem';
 import StatusActiveUser from './StatusActiveUser';
 import firebase from 'react-native-firebase';
 import Css from './Css';
-
+import LinearGradient from 'react-native-linear-gradient'
 export default class ActiveList extends Component {
     constructor(props) {
         super(props);
@@ -58,13 +58,16 @@ export default class ActiveList extends Component {
 
     render() {
         return (
-            <View style={Css.container}>
+            <LinearGradient  
+                            colors={['#004242','#000000']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}}  style={Css.container}>
                 <FlatList
                 data={this.state.data}
                 renderItem={this.renderItem}
                 keyExtractor={(item,key) => key.toString()}
             />
-            </View>
+            </LinearGradient>
         );
     }
 }

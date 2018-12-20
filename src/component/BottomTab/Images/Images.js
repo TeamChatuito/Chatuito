@@ -47,8 +47,8 @@ export default class Images extends Component {
                 <MapView
                     style={Css.map}
                     initialRegion={this.state.initialPosition}>
-                    <Marker coordinate={this.state.initialPosition} title={'you are here'}
-                            description={'ban dang o day'}/>
+                    <Marker coordinate={this.state.initialPosition} title={'You are here'}
+                            description={'You are here!'}/>
                 </MapView>
             </View>
         );

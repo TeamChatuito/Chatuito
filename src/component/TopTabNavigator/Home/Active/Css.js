@@ -14,10 +14,11 @@ export default Css = StyleSheet.create({
         alignItems: 'center',
         paddingLeft: 5,
         paddingRight: 10,
-        paddingVertical: 8
+        paddingVertical: 8,
+        backgroundColor: '#ffffff10'
     },
     containerAvatar:{
-        flex:1
+        flex:1,
     },
     avatar:AppStyles.avatar,
     containerName:{
@@ -34,7 +35,7 @@ export default Css = StyleSheet.create({
     wave: {
         width: 28,
         height: 28,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     statusDot:{
         position: 'absolute',

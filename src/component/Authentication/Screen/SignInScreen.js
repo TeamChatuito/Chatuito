@@ -75,63 +75,63 @@ export default class SignInScreen extends Component {
                             style={Css.container}>
                     
                     
-                    {/* Title */}
-                    <View>
+                            {/* Title */}
+                            <View>
                         <Text style={Css.titleApp}>Chatuito</Text>
                     </View>
 
-                        {/* Email */}
+                                {/* Email */}
 
-                        <TextInput 
-                                    style={Css.textInput}
+                                <TextInput 
+                                            style={Css.textInput}
                                     placeholder="Email"
                                     keyboardType="email-address"
                                     placeholderTextColor="#515151"
                                     underlineColorAndroid='#515151'
                                     onChangeText={(email) => {
-                                    this.setState({email})}}
-                                    />
+                                            this.setState({email})}}/>
                         
-                        {/* Password */}
+                                {/* Password */}
 
-                        <TextInput 
-                                    style={Css.textInput}
+                                <TextInput 
+                                            style={Css.textInput}
                                     placeholder="Password"
                                     secureTextEntry={this.state.eye}
                                     placeholderTextColor="#515151"
                                     underlineColorAndroid='#515151'
-                                    onChangeText={(password) => this.setState({password})}/>
+                                            onChangeText={(password) => this.setState({password})}/>
 
 
-                        {/* Eyes */}
+                                {/* Eyes */}    
 
-                        {this.state.eye===true && <Icon name="md-eye-off" size={35} onPress={()=>this.setState({eye:false})}/>}
-                        {this.state.eye===false && <Icon name="md-eye" size={35} onPress={()=>this.setState({eye:true})}/>}
+                                {this.state.eye===true && <Icon name="md-eye-off" size={35} onPress={()=>this.setState({eye:false})}/>}
+                                {this.state.eye===false && <Icon name="md-eye" size={35} onPress={()=>this.setState({eye:true})}/>}
 
-                    <TouchableOpacity
-                                    style={Css.button}
-                                    onPress={()=>this._login()}>
+                                <TouchableOpacity
+                                            style={Css.button}
+                                            onPress={()=>this._login()}>
 
-                        <Text 
-                                    style={Css.loginText}
-                                    >Login</Text>
+                                    <Text 
+                                            style={Css.loginText}
+                                            >Login</Text>
                     
-                    </TouchableOpacity>
+                                </TouchableOpacity>
 
 
-                    <TouchableOpacity 
-                                    style={Css.textButton} onPress={()=>this.showDialog()}>
+                                <TouchableOpacity 
+                                            style={Css.textButton} onPress={()=>this.showDialog()}>
                         
-                        <Text style={Css.textInsideButton}>Forgot your password?</Text>
+                                    <Text 
+                                            style={Css.textInsideButton}>Forgot your password?</Text>
                     
-                    </TouchableOpacity>
+                                </TouchableOpacity>
                     
-                    <TouchableOpacity 
-                                    style={Css.textButton} onPress={() => this._signUp()}>
+                                <TouchableOpacity 
+                                            style={Css.textButton} onPress={() => this._signUp()}>
                         
-                        <Text style={Css.textInsideButton}>Register</Text>
+                                    <Text style={Css.textInsideButton}>Register</Text>
                     
-                    </TouchableOpacity>
+                                </TouchableOpacity>
                 
                 
                 <Dialog.Container visible={this.state.dialogVisible}>

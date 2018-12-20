@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import styles from './Css'
 import ImagePicker from 'react-native-image-picker';
+import LinearGradient from 'react-native-linear-gradient'
 
 export default class Camera extends React.Component {
     state = {
@@ -80,23 +81,26 @@ export default class Camera extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
+            <LinearGradient 
+                            colors={['#004242','#000000']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}} 
+                            style={styles.container}>
+                <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)} style={{alignItems:"center"}}>
                     <View
                         style={[
-                            styles.avatar,
                             styles.avatarContainer,
                             { marginBottom: 20 },
                         ]}
                     >
                         {this.state.avatarSource === null ? (
-                            <Text>Take a Photo</Text>
+                            <Text style={styles.textInsideButton}>Take a Photo</Text>
                         ) : (
                             <Image style={styles.avatar} source={this.state.avatarSource} />
                         )}
                     </View>
                 </TouchableOpacity>
-            </View>
+            </LinearGradient>
         );
     }
 }

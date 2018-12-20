@@ -4,7 +4,15 @@ export default Css = StyleSheet.create({
     container:{
         flex:0.075,
         flexDirection:'row',
-        backgroundColor:AppStyles.colors.white
+        backgroundColor: '#ffffff20'
+    },
+    textSearched:{
+        color:'#909090',
+        fontFamily:'CormorantGaramond-Light',
+        fontSize:18
+    },
+    background:{
+        flex:1
     },
     containerSearch:{
         flex:9,
@@ -25,7 +33,8 @@ export default Css = StyleSheet.create({
         flex:1,
     },
     searchTextInput:{
-        flex:5
+        flex:5,
+        color:'#929292'
     },
     containerIconAndTextInPut:{
         flex:1,

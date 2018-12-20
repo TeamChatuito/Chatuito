@@ -8,10 +8,12 @@ import firebase from 'react-native-firebase'
 import * as AuthHandle from '../../Handling/AuthHandle'
 import Dialog from 'react-native-dialog'
 import SearchHeader from '../SeachScreen/SearchHeader'
+import LinearGradient from 'react-native-linear-gradient'
 class  Item extends Component{
     render(){
         return(
-            <View >
+            <View
+                            >
                 <TouchableOpacity style={Css.contanerItem} onPress={this.props.onPress}>
                     <View style={Css.avatarContainerItem}>
                         <Icon name={this.props.avatarItem} size={25}/>
