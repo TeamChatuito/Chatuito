@@ -11,12 +11,13 @@ export default class SearchHeader extends Component{
         console.log('user '+user)
         this.state={
             returnButton:false,
-            image:user
+            image:user          
         }
     }
 
     // Tạo biến returnButton để thay đổi icon và xử lý navigation
-    // Tạo biến identificationReturn để xác định xem action đó có thực thi navigation để trả về Main hay không ?
+    // Tạo biến identificationReturn để xác định xem action đó có thực thi navigation để trả về Main hay không?
+    
     handleSearch(identificationReturn){
         if(this.state.returnButton===false){
             this.setState({returnButton:true});

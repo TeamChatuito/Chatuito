@@ -4,14 +4,15 @@ import {
     View,
     TextInput,
     TouchableHighlight,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 import Css from '../Css/Css'
 import firebase from 'react-native-firebase'
 import  Dialog from 'react-native-dialog'
 import Icon from "react-native-vector-icons/Ionicons";
 import * as AllHandle from '../../../Handling/AuthHandle'
-
+import LinearGradient from 'react-native-linear-gradient'
 export default class SignInScreen extends Component {
     constructor(props) {
         super(props);
@@ -67,39 +68,72 @@ export default class SignInScreen extends Component {
 
     render() {
         return (
-            <View style={Css.container}>
+            <LinearGradient 
+                            colors={['#004242','#000000']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}} 
+                            style={Css.container}>
+                    
+                    
+                    {/* Title */}
                     <View>
-                        <Text style={Css.nameApp}>Chatuito</Text>
+                        <Text style={Css.titleApp}>Chatuito</Text>
                     </View>
-                    <View style={Css.inputContainer}>
-                        <Image style={Css.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
-                        <TextInput style={Css.inputs}
-                                   placeholder="Email"
-                                   keyboardType="email-address"
-                                   underlineColorAndroid='transparent'
-                                   onChangeText={(email) => {
-                                       this.setState({email})
-                                   }}/>
-                    </View>
-                    <View style={Css.inputContainer}>
-                        <Image style={Css.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
-                        <TextInput style={Css.inputs}
-                                   placeholder="Password"
-                                   secureTextEntry={this.state.eye}
-                                   underlineColorAndroid='transparent'
-                                   onChangeText={(password) => this.setState({password})}/>
+
+                        {/* Email */}
+
+                        <TextInput 
+                                    style={Css.textInput}
+                                    placeholder="Email"
+                                    keyboardType="email-address"
+                                    placeholderTextColor="#515151"
+                                    underlineColorAndroid='#515151'
+                                    onChangeText={(email) => {
+                                    this.setState({email})}}
+                                    />
+                        
+                        {/* Password */}
+
+                        <TextInput 
+                                    style={Css.textInput}
+                                    placeholder="Password"
+                                    secureTextEntry={this.state.eye}
+                                    placeholderTextColor="#515151"
+                                    underlineColorAndroid='#515151'
+                                    onChangeText={(password) => this.setState({password})}/>
+
+
+                        {/* Eyes */}
+
                         {this.state.eye===true && <Icon name="md-eye-off" size={35} onPress={()=>this.setState({eye:false})}/>}
                         {this.state.eye===false && <Icon name="md-eye" size={35} onPress={()=>this.setState({eye:true})}/>}
-                    </View>
-                    <TouchableHighlight style={[Css.buttonContainer, Css.loginButton]} onPress={()=>this._login()}>
-                        <Text style={Css.loginText}>Login</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={Css.buttonContainer} onPress={()=>this.showDialog()}>
-                        <Text>Forgot your password?</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={Css.buttonContainer} onPress={() => this._signUp()}>
-                        <Text>Register</Text>
-                    </TouchableHighlight>
+
+                    <TouchableOpacity
+                                    style={Css.button}
+                                    onPress={()=>this._login()}>
+
+                        <Text 
+                                    style={Css.loginText}
+                                    >Login</Text>
+                    
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity 
+                                    style={Css.textButton} onPress={()=>this.showDialog()}>
+                        
+                        <Text style={Css.textInsideButton}>Forgot your password?</Text>
+                    
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity 
+                                    style={Css.textButton} onPress={() => this._signUp()}>
+                        
+                        <Text style={Css.textInsideButton}>Register</Text>
+                    
+                    </TouchableOpacity>
+                
+                
                 <Dialog.Container visible={this.state.dialogVisible}>
                     <Dialog.Title>Reset password</Dialog.Title>
                     <Dialog.Description>
@@ -112,7 +146,7 @@ export default class SignInScreen extends Component {
                     <Dialog.Button label="Cancel" onPress={()=>this.handleCancel()} />
                     <Dialog.Button label="Send" onPress={()=>this.handleSend()} />
                 </Dialog.Container>
-            </View>
+            </LinearGradient>
         );
     }
 }

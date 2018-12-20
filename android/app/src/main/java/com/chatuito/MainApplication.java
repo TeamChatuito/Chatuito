@@ -3,6 +3,7 @@ package com.chatuito;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -15,7 +16,7 @@ import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 import java.util.Arrays;
 import java.util.List;
-
+import com.BV.LinearGradient.LinearGradientPackage; 
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -28,12 +29,14 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new LinearGradientPackage(),
             new MapsPackage(),
               new RNFirebaseAuthPackage(),
             new ImagePickerPackage(),
             new VectorIconsPackage(),
             new RNFirebasePackage(),
-              new RNFirebaseDatabasePackage()
+              new RNFirebaseDatabasePackage(),
+              new LinearGradientPackage()
       );
     }
 
