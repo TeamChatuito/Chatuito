@@ -8,9 +8,9 @@ export default class Gallery extends Component{
     render(){
         return(
             <LinearGradient
-            colors={['#004242','#000000']}
-            start={{ x: 1, y: 1 }} 
-            end={{x:0,y:0}} 
+            colors={['#fdfbfb','#ebedee']}
+                            start={{ x: 1, y: 1 }} 
+                            end={{x:0,y:0}} 
              style={Css.container}>
 
             </LinearGradient>
