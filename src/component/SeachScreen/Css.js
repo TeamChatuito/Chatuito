@@ -52,15 +52,27 @@ export default Css = StyleSheet.create({
         justifyContent:'flex-start'
     },
     textInputStyle:{
-        height:50,
-        width:'95%',
+        width:'70%',
         justifyContent:'center',
         backgroundColor:'#fff',
-        marginTop:5,
         fontSize:16,
         color:'#000000',
-        borderRadius:5,
+        borderRadius:10,
         paddingLeft:20
+    },
+    textInputandButton:{
+        height:50,
+        width:'95%',
+        flexDirection:'row',
+        marginTop:5,
+    },
+    buttonSearch:{
+        justifyContent:'center',
+        borderRadius:10,
+        backgroundColor:'#28D8A1',
+        width:'29%',
+        marginLeft:'1%',
+        alignItems:'center'
     },
     scrollViewStyle:{
         backgroundColor:'#ffffff90',

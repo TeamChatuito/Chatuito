@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {Text, ScrollView, TextInput, FlatList} from 'react-native'
+import {Text, ScrollView, TextInput, FlatList,TouchableOpacity, View} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import Css from './Css'
 import firebase from 'react-native-firebase'
@@ -53,18 +53,21 @@ export default class SearchScreen extends Component{
                             end={{x:0,y:0}} 
                             style={Css.background}
                             >
+                            <View style={Css.textInputandButton}>
                             <TextInput
                                         style={Css.textInputStyle}
                                         keyboardType='default'
                                         placeholderTextColor="#515151"
                                         underlineColorAndroid='transparent'
-                                        placeholder={'Search now'}
-                                        value={searchText}
+                                        placeholder={'Input name'}
                                         onChangeText={(searchText)=>{
                                             this.setState({searchText})
                                         }}
-                                        onSubmitEditing={()=> this.listenForItems()}
                                         />
+                            <TouchableOpacity style={Css.buttonSearch}>
+                                        <Text style={{color:'#fff'}}>Search</Text>
+                            </TouchableOpacity>
+                            </View>
                             <ScrollView
                                         style={Css.scrollViewStyle}
                                         >
