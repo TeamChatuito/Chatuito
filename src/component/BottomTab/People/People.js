@@ -86,7 +86,7 @@ export default class People extends Component{
         const {navigate} = this.props.navigation;
         return(
             <LinearGradient 
-                            colors={['#004242','#000000']}
+                            colors={['#fdfbfb','#ebedee']}
                             start={{ x: 1, y: 1 }} 
                             end={{x:0,y:0}} 
                             style={Css.container}>

@@ -53,7 +53,7 @@ export default class GroupsList extends Component {
         const {navigate} = this.props;
         return (
             <LinearGradient 
-                            colors={['#004242','#000000']}
+                            colors={['#fdfbfb','#ebedee']}
                             start={{ x: 1, y: 1 }} 
                             end={{x:0,y:0}} 
                             style={{flex:1}}>

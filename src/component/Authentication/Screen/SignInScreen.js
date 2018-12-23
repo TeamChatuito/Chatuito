@@ -69,7 +69,7 @@ export default class SignInScreen extends Component {
     render() {
         return (
             <LinearGradient 
-                            colors={['#004242','#000000']}
+                            colors={['#fdfbfb','#ebedee']}
                             start={{ x: 1, y: 1 }} 
                             end={{x:0,y:0}} 
                             style={Css.container}>
@@ -84,21 +84,21 @@ export default class SignInScreen extends Component {
 
                                 <TextInput 
                                             style={Css.textInput}
-                                    placeholder="Email"
-                                    keyboardType="email-address"
-                                    placeholderTextColor="#515151"
-                                    underlineColorAndroid='#515151'
-                                    onChangeText={(email) => {
+                                            placeholder="Email"
+                                            keyboardType="email-address"
+                                            placeholderTextColor="#515151"
+                                            underlineColorAndroid='transparent'
+                                            onChangeText={(email) => {
                                             this.setState({email})}}/>
                         
                                 {/* Password */}
 
                                 <TextInput 
                                             style={Css.textInput}
-                                    placeholder="Password"
-                                    secureTextEntry={this.state.eye}
-                                    placeholderTextColor="#515151"
-                                    underlineColorAndroid='#515151'
+                                            placeholder="Password"
+                                            secureTextEntry={this.state.eye}
+                                            placeholderTextColor="#515151"
+                                            underlineColorAndroid='transparent'
                                             onChangeText={(password) => this.setState({password})}/>
 
 

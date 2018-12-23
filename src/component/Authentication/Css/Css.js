@@ -12,13 +12,12 @@ export default Css = StyleSheet.create({
     titleApp: {
         fontSize: 70,
         marginBottom: '10%',
-        color:"#456E7D",
-        
+        color:"#28D8A1",
+        marginTop:'-20%'
     },
     //Loading
     loading: {
         flex: 1,
-        backgroundColor: AppStyles.colors.appScreenColor,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -31,36 +30,39 @@ export default Css = StyleSheet.create({
     //SignIn
     textInput: {
         marginBottom:5,
-        fontSize: 20,
-        fontFamily:'CormorantGaramond-Light',
+        fontSize: 14,
         height:40,
-        color:'#a0a0a0',
-        width:"90%"
+        color:'#000',
+        width:"90%",
+        backgroundColor:'#fff',
+        borderRadius:5
     },
 
     button: {
-        height: 45,
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
-        width: '70%',
-        borderRadius: 30,
+        width: '90%',
+        borderRadius: 5,
         marginTop:10,
-        backgroundColor: '#ffffff20'
+        backgroundColor: '#28D8A1',
+        
     },
 
     textButton:{
-        marginBottom:'3%'
+        marginBottom:'3%',
+        color:'#000'
     },
 
     textInsideButton:{
-        color:'#909090',
-        fontFamily:'CormorantGaramond-Light',
+        color:'#000',
         fontSize:15
     },
 
     loginText: {
-        color:'#909090'
+        color:'#fff',
+        fontSize:18
     },
 })

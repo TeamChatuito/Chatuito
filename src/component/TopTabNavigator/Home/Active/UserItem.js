@@ -19,7 +19,8 @@ export default class UserItem extends Component {
         return (
             <TouchableRipple
                 onPress={this.onPress}
-                rippleColor="rgba(0, 0, 0, .20)"
+                rippleColor='#ffffff20'
+                style={{alignItems:'center'}}
             >
                 <View style={Css.item}>
                     <View style={Css.containerAvatar}>

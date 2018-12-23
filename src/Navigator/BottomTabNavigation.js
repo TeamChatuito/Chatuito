@@ -34,20 +34,10 @@ export default BottomTabNavigator = createMaterialBottomTabNavigator(
                 tabBarIcon:({tintColor})=>(<Icon name="md-map" size={25} color={tintColor} />)
             }
         },
-        Setting:{
-            screen:Setting,
-            navigationOptions:{
-                tabBarIcon:({tintColor})=>(<Icon name="md-settings"size={25} color={tintColor} />)
-            }
-        }
     },
     {
         barStyle:{
-            backgroundColor:'#001818',
+            backgroundColor:'#fff',
         }
     } ,
-    {
-
-    }
-
 )

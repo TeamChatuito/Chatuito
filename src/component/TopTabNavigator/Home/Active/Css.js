@@ -12,10 +12,11 @@ export default Css = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingLeft: 5,
-        paddingRight: 10,
-        paddingVertical: 8,
-        backgroundColor: '#ffffff10'
+        backgroundColor: '#fff',
+        width:'95%',
+        marginTop: 5,
+        borderRadius:5,
+        height:50
     },
     containerAvatar:{
         flex:1,

@@ -143,6 +143,10 @@ export default class ProfileScreen extends Component{
     render(){
         const user = firebase.auth().currentUser;
         return(
+        <LinearGradient   colors={['#fdfbfb','#ebedee']}
+        start={{ x: 1, y: 1 }} 
+        end={{x:0,y:0}} 
+        style={Css.container}>  
             <ScrollView style={Css.container}>
                 <View style={Css.containerHeader}>
                     <View style={Css.containerAvatar}>
@@ -161,11 +165,10 @@ export default class ProfileScreen extends Component{
                             <TextInforRow titleInfor='Name :' valueInfor={this.state.name}/>
                             <TextInforRow titleInfor='Mail :' valueInfor={user.email}/>
                             <TextInforRow titleInfor='Phone :' valueInfor={user.phoneNumber}/>
-                            <TextInforRow titleInfor='Uid :' valueInfor={user.uid}/>
                         </View>}
                     </View>
                     <View style={Css.containerSetting}>
-                        <Item avatarItem='md-create' titleItem='Update Profile' onPress={()=>this.showEditProfile()}/>
+                        <Item avatarItem='md-create' titleItem='Edit your profile' onPress={()=>this.showEditProfile()}/>
                         {this.state.showEditProfile && <View style={Css.profileInfor}>
                             <View style={Css.editProfile}>
                                 <TextInput placeholder="Name" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(newName)=>{this.setState({newName})}}/>
@@ -173,19 +176,23 @@ export default class ProfileScreen extends Component{
                                 <TouchableOpacity style={Css.buttonUpdate} onPress={()=>this.updateProfile()}><Text style={Css.textButton}>  Update</Text></TouchableOpacity>
                             </View>
                         </View>}
-                        <Item avatarItem='md-person' titleItem='Profile'/>
-                        <Item avatarItem='md-person' titleItem='Profile'/>
-                        <Item avatarItem='md-person' titleItem='Profile'/>
-                        <Item avatarItem='md-person' titleItem='Profile'/>
+                    </View>
+                    <View style={Css.containerSetting}>
+                        <Item avatarItem='md-create' titleItem='Change Password'/>
+                    </View>
+                    <View style={Css.containerSetting}>
+                        <Item avatarItem='md-person' titleItem='Verifing Status'/>
                     </View>
                 </View>
+
+
                 <View style={Css.containerLogOut}>
                     <TouchableOpacity style={Css.buttonLogOut} onPress={()=>this.setState({dialogVisible:true})}><Text style={Css.textButton}>Log Out</Text></TouchableOpacity>
                 </View>
                 <Dialog.Container visible={this.state.dialogVisible}>
                     <Dialog.Title>Log out</Dialog.Title>
                     <Dialog.Description>
-                        You want to log out ?
+                       Do you want to log out?
                     </Dialog.Description>
                     <Dialog.Input
                         wrapperStyle={Css.wrapperStyleResetPassword}
@@ -195,6 +202,7 @@ export default class ProfileScreen extends Component{
                     <Dialog.Button label="Cancel" onPress={()=>this.handleCancel()} />
                 </Dialog.Container>
             </ScrollView>
+            </LinearGradient>
         )
     }
 }

@@ -4,6 +4,7 @@ import Css from './Css';
 import Icon from 'react-native-vector-icons/Ionicons'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
+
 export default class SearchHeader extends Component{
     constructor(props){
         super(props);
@@ -14,10 +15,7 @@ export default class SearchHeader extends Component{
             image:user          
         }
     }
-    //chay thu di
-    // Tạo biến returnButton để thay đổi icon và xử lý navigation
-    // Tạo biến identificationReturn để xác định xem action đó có thực thi navigation để trả về Main hay không?
-    
+ 
     handleSearch(identificationReturn){
         if(this.state.returnButton===false){
             this.setState({returnButton:true});
@@ -30,15 +28,18 @@ export default class SearchHeader extends Component{
             }
         }
     }
+
+
+
     render(){
         {console.log('render')}
         const { navigation } = this.props;
         return(
 
             <LinearGradient 
-                            colors={['#001818','#001818']}
+                            colors={['#fff','#fff']}
                             start={{ x: 1, y: 1 }} 
-                            end={{x:0,y:0}} 
+                            end={{x:1,y:0}} 
                             style={Css.container}
                             >
                 
@@ -47,25 +48,17 @@ export default class SearchHeader extends Component{
                 <TouchableOpacity 
                                     style={Css.containerSearch} 
                                     onPress={()=>this.handleSearch(false)}>
-                    
                                     <View 
-                                        style={Css.containerIconAndTextInPut}>
-                                        
-                                        <View 
                                             style={Css.searchIcon}>
-                                            <Icon name="md-search" size={25} color={"#929292"}
-                                            
-                                            />
-                                        </View>
-                                        
-                                        <TextInput 
-                                            style={Css.searchTextInput} 
-                                            placeholder="Search" 
-                                            placeholderTextColor="#929292"
-                                            onFocus={()=>this.handleSearch(false)}/>
+                                            <Icon 
+                                                    name="md-search" 
+                                                    size={25} 
+                                                    color={"#000"}/>
                                     </View>
-
-
+                                        
+                                    <Text 
+                                            style={Css.searchTextInput}
+                                            >Search</Text>
                 </TouchableOpacity>}
 
                 {this.state.returnButton===true &&
@@ -74,18 +67,29 @@ export default class SearchHeader extends Component{
                                     style={Css.containerSearch} 
                                     onPress={()=>this.handleSearch(true)}>
                     
-                                <View style={Css.containerIconAndTextInPut}>
-                                <View style={Css.searchIcon}>
-                                <Icon name="md-arrow-back" size={25} color={"#929292"}/>
-                        </View>
-                        <TextInput style={Css.searchTextInput} placeholderTextColor="#515151"
-                                     placeholder="Search" onFocus={()=>this.handleSearch(false)}/>
-                    </View>
+                                    <View 
+                                            style={Css.searchIcon}>
+                                        <Icon 
+                                                name="md-arrow-back" 
+                                                size={25} 
+                                                color={"#000"}/>
+                                    </View>
+                                    <Text 
+                                            style={Css.searchTextInput}
+                                            >Main</Text>
                 </TouchableOpacity>}
-                <View style={Css.containerAvatar}>
-                    <TouchableHighlight activeOpacity={0.75} underlayColor='#a6a6a6' onPress={()=>this.props.navigation.navigate('profile')}>
-                    {this.state.image?<Image style={Css.AvatarStyle} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.AvatarStyle} source={{uri:'https://www.gravatar.com/avatar/'}}/>}                       
-                    </TouchableHighlight>
+                
+                <View 
+                        style={Css.containerAvatar}>
+                        
+                        <TouchableOpacity
+                                            style={{width:'100%',height:'100%'}} 
+                                            activeOpacity={0.75} 
+                                            underlayColor='#a6a6a6' 
+                                            onPress={()=>this.props.navigation.navigate('profile')}>
+                    
+                                            {this.state.image?<Image style={Css.AvatarStyle} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.AvatarStyle} source={{uri:'https://www.gravatar.com/avatar/'}}/>}                       
+                        </TouchableOpacity>
                 </View>
             </LinearGradient>
         )

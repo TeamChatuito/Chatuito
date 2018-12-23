@@ -14,16 +14,17 @@ export default Css = StyleSheet.create({
   topGroup: {
     flexDirection: "row",
     margin: 5,
-    backgroundColor:'#ffffff20',
-    padding:8,
-    borderRadius:10
+    marginBottom:0,
+    backgroundColor:'#fff',
+    alignItems:'center',
+    borderRadius:5,
+    height:50,
+    justifyContent:'center',
+    backgroundColor:'#28D8A1'
   },
   myFriends: {
-    flex: 1,
-    color: '#929292',
-    fontSize: 20,
-    
-    fontFamily:'CormorantGaramond-Light',
+    color: '#fff',
+    fontSize: 16,
   },
   profileContainer: {
     flexDirection: "row",
@@ -33,7 +34,7 @@ export default Css = StyleSheet.create({
     marginHorizontal:10,
     borderRadius:10,
     paddingLeft:10,
-    backgroundColor:'#ffffff10',
+    backgroundColor:'#fff',
   },
   profileImage: {
     width: 30,
@@ -43,7 +44,7 @@ export default Css = StyleSheet.create({
   },
   profileName: {
     marginLeft: 6,
-    fontSize: 14,
-    color:'#929292',
+    fontSize: 16,
+    color:'#000',
   }
 })

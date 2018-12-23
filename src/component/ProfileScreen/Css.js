@@ -5,16 +5,16 @@ let Css = StyleSheet.create({
         flexDirection:'column'
     },
     button: {
-        backgroundColor: 'gray',
+        backgroundColor: '#28D8A1',
         width: 150,
         height: 50,
-        borderRadius: 10,
+        borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
         margin: 10
     },
     buttonText:{
-        color: 'white'
+        color: '#fff'
     },
     containerHeader:{
         flex:1,
@@ -27,7 +27,7 @@ let Css = StyleSheet.create({
     },
     containerBody:{
         flex:2,
-        //backgroundColor:'yellow'
+        marginLeft:'5%'
     },
     containerLogOut:{
         flex:1,
@@ -37,17 +37,18 @@ let Css = StyleSheet.create({
     containerProfile:{
         flex:1,
         flexDirection:'column',
-        marginBottom:20,
-        borderBottomWidth: 0.4
-        //backgroundColor: 'red'
+        marginBottom:5,
+        backgroundColor:'#fff',
+        width:'95%',
+        borderRadius:5
     },
     containerSetting:{
         flex:1,
         flexDirection:'column',
-        marginBottom:20,
-        borderBottomWidth: 0.4,
-        
-        //backgroundColor:'green'
+        marginBottom:5,
+        backgroundColor:'#fff',
+        borderRadius:5,
+        width:'95%'
     },
     containerAvatar:{
         justifyContent:'center',
@@ -56,9 +57,16 @@ let Css = StyleSheet.create({
        
     },
     name:{
-        marginTop:10,
+        marginTop:5,
         flex:1,
-        fontSize:30
+        fontSize:18,
+        color:'#28D8A1',
+        backgroundColor:'#fff',
+        height:50,
+        width: '90%',
+        textAlign:'center',
+        borderRadius:5,
+        paddingTop:12
     },
     Avatar:{
         height:100,
@@ -78,7 +86,6 @@ let Css = StyleSheet.create({
         alignItems:'center'
     },
     titleContainerItem:{
-        borderBottomWidth:0.2,
         flex:7,
         //backgroundColor:'red',
         justifyContent:'center',
@@ -87,12 +94,17 @@ let Css = StyleSheet.create({
 
     },
     titleText:{
-        fontSize:20,
-         
+        fontSize:16,
+        color:'#28D8A1'
     },
     textInforRow:{
         flexDirection:'row',
-        margin:5
+        height:40,
+        backgroundColor:'#e5e5e5',
+        alignItems:'center',
+        borderRadius:5,
+        marginBottom:5,
+        paddingLeft:10
     },
 
     profileInfor:{
@@ -103,13 +115,16 @@ let Css = StyleSheet.create({
     text:{
         justifyContent:'center',
         alignItems:'center',
-        fontSize:18
+        fontSize:14
     },
     inputs: {
         height: 40,
-        
+        backgroundColor:'#e0e0e0',
         borderBottomColor: 'black',
-    
+        width:'100%',
+        marginBottom:5,
+        borderRadius:5,
+        paddingLeft:5
     },
     editProfile:{
         justifyContent:'center',
@@ -117,24 +132,24 @@ let Css = StyleSheet.create({
         margin:10
     },
     buttonUpdate:{
-        backgroundColor:'blue',
-        width:100,
-        height:40,
+        backgroundColor:'#28D8A1',
+        width:'100%',
+        height:50,
         justifyContent:'center',
         alignItems:'center',
-        borderRadius:20
+        borderRadius:5,
     },
     textButton:{
         fontSize:20,
-        color:'white'
+        color:'#fff'
     },
     buttonLogOut:{
-        backgroundColor:'red',
-        width:100,
-        height:40,
+        backgroundColor:'#28D8A1',
+        width:'90%',
+        height:50,
         justifyContent:'center',
         alignItems:'center',
-        borderRadius:20
+        borderRadius:5
     }
 })
 export default Css

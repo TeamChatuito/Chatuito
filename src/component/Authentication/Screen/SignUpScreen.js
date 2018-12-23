@@ -45,7 +45,7 @@ export default class SignUpScreen extends React.Component {
     render(){
         return (
             <LinearGradient 
-                        colors={['#004242','#000000']}
+                        colors={['#fdfbfb','#ebedee']}
                         start={{ x: 1, y: 1 }} 
                         end={{x:0,y:0}} 
                         style={Css.container}>
@@ -58,20 +58,20 @@ export default class SignUpScreen extends React.Component {
                                     style={Css.textInput}
                                     placeholder="Name"
                                     placeholderTextColor="#515151"
-                                    underlineColorAndroid='#515151'
+                                    underlineColorAndroid='transparent'
                                     onChangeText={(name) => this.setState({name})}/>
 
                         <TextInput style={Css.textInput}
                                     placeholder="Email"
                                     keyboardType="email-address"
                                     placeholderTextColor="#515151"
-                                    underlineColorAndroid='#515151'
+                                    underlineColorAndroid='transparent'
                                     onChangeText={(email) => this.setState({email})}/>
                         <TextInput style={Css.textInput}
                                     placeholder="Password"
                                     secureTextEntry={this.state.eye}
                                     placeholderTextColor="#515151"
-                                    underlineColorAndroid='#515151'
+                                    underlineColorAndroid='transparent'
                                     onChangeText={(password) => this.setState({password})}/>
                     
                         {this.state.eye===true && <Icon name="md-eye-off" size={35} onPress={()=>this.setState({eye:false})}/>}
@@ -80,7 +80,7 @@ export default class SignUpScreen extends React.Component {
                         <TouchableOpacity 
                                     style={Css.button} onPress={()=>this.handleSignUp()}>
                             <Text 
-                                    style={Css.textInsideButton}>Sign up</Text>
+                                    style={Css.loginText}>Sign up</Text>
                         </TouchableOpacity>
             </LinearGradient>
         )

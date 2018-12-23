@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "react": "16.6.0-alpha.8af6728",
+    "react-instantsearch-native": "^5.3.2",
     "react-native": "^0.57.5",
     "react-native-dialog": "^5.4.0",
     "react-native-firebase": "^5.0.0",
@@ -23,8 +24,8 @@
   "devDependencies": {
     "schedule": "^0.4.0"
   },
-  "nrpm":{
-    "assets":[
+  "nrpm": {
+    "assets": [
       "./src/assets/fonts/"
     ]
   }

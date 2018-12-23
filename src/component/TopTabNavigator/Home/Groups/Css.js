@@ -10,7 +10,7 @@ export default Css = StyleSheet.create({
         width: Metrics.screenWidth / 2.5,
         height: Metrics.screenHeight / 3.6,
         margin: 5,
-        backgroundColor:'#ffffff70'
+        backgroundColor:'#fff'
     },
     cardView: {
         width: Metrics.screenWidth / 2.5,

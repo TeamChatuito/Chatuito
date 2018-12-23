@@ -59,7 +59,7 @@ export default class ActiveList extends Component {
     render() {
         return (
             <LinearGradient  
-                            colors={['#004242','#000000']}
+                            colors={['#fdfbfb','#ebedee']}
                             start={{ x: 1, y: 1 }} 
                             end={{x:0,y:0}}  style={Css.container}>
                 <FlatList
