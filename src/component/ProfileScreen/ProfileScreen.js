@@ -103,6 +103,13 @@ export default class ProfileScreen extends Component{
                 AuthHandle._showToastSuccessFail('Update Image Success');
             })
         }
+        firebase.database().ref('/people').on('value', (snap) => {
+            snap.forEach(child => {
+                if (child.val().uid === user.uid) {
+                    firebase.database().ref('/people/' + child.key + '/image').set(this.state.image)
+                }
+            })
+        })
         this.props.navigation.push('routerMain', {
             image: this.state.image
             //={console.log(this.state.image)}

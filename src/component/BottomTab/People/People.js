@@ -8,7 +8,6 @@ import LinearGradient from 'react-native-linear-gradient'
 class FlatListItem extends Component{
     constructor(props){
         super(props);
-        
     }
     render(){
         
@@ -23,12 +22,7 @@ class FlatListItem extends Component{
         }}
       >
         <View style={Css.profileContainer}>
-          <Image
-            source={{
-              uri: "https://www.gravatar.com/avatar/"
-            }}
-            style={Css.profileImage}
-          />
+            {this.props.item.image?<Image style={Css.profileImage} source={{uri:this.props.item.image,isStatic:true}}></Image>:  <Image style={Css.profileImage} source={{uri:'https://www.gravatar.com/avatar/'}}/>}
           <Text style={Css.profileName}>{this.props.item.name}</Text>
         </View>
       </TouchableOpacity>
@@ -45,7 +39,8 @@ export default class People extends Component{
             email:'',
             data:[],
             loading:true,
-            test:''
+            test:'',
+            image:''
         }
     }
     getRef(){
@@ -64,7 +59,8 @@ export default class People extends Component{
                     items.push({
                         name: child.val().name,
                         uid: child.val().uid,
-                        email: child.val().email
+                        email: child.val().email,
+                        image : child.val().image
                     });
             });
            // console.log(items);

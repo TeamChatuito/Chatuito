@@ -9,7 +9,7 @@ import LinearGradient from 'react-native-linear-gradient'
 export default class SignUpScreen extends React.Component {
     constructor(props){
         super(props);
-        this.state = { email: '', password: '', eye:true ,name:''  }
+        this.state = { email: '', password: '', eye:true ,name:'',image:'https://www.gravatar.com/avatar/'}
     }
     getRef() {
         return firebase.database().ref();
@@ -34,6 +34,7 @@ export default class SignUpScreen extends React.Component {
                             uid: user.uid,
                             name:name,
                             online:1,
+                            image:'https://www.gravatar.com/avatar/',
                             lastActive:now
                         });
                     AllHandle._showToastSuccessFail('Registration successful !');

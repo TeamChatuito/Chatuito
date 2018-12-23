@@ -88,7 +88,7 @@ export default class SearchHeader extends Component{
                                             underlayColor='#a6a6a6' 
                                             onPress={()=>this.props.navigation.navigate('profile')}>
                     
-                                            {this.state.image?<Image style={Css.AvatarStyle} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.AvatarStyle} source={{uri:'https://www.gravatar.com/avatar/'}}/>}                       
+                                            {this.state.image?<Image style={Css.profileImage} source={{uri:this.state.image,isStatic:true}}></Image>:  <Image style={Css.profileImage} source={{uri:'https://www.gravatar.com/avatar/'}}/>}
                         </TouchableOpacity>
                 </View>
             </LinearGradient>
