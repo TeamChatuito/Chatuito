@@ -49,9 +49,13 @@ export default class ProfileScreen extends Component{
             infor: null,
             showProfile: false,
             showEditProfile: false,
+            showChangePassword:false,
             newName: null,
             newPhone: null,
             dialogVisible: false,
+            oldPassword:null,
+            newPassword:null,
+            reNewPassword:null,
             name:'a'
         }
         this.chooseImage = this.chooseImage.bind(this);
@@ -95,6 +99,9 @@ export default class ProfileScreen extends Component{
     showEditProfile(){
         this.state.showEditProfile?this.setState({showEditProfile:false}):this.setState({showEditProfile:true})
     }
+    showChangePassword(){
+        this.state.showChangePassword?this.setState({showChangePassword:false}):this.setState({showChangePassword:true})
+    }
     updateImage(){
         const { navigation } = this.props;
         const user = firebase.auth().currentUser;
@@ -130,6 +137,31 @@ export default class ProfileScreen extends Component{
         }
         this.props.navigation.navigate('main');
     }
+
+    reauthenticate = (currentPassword) => {
+        var user = firebase.auth().currentUser;
+        var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword);
+        return user.reauthenticateWithCredential(cred);
+    }
+    changePassword(){
+        if (this.state.oldPassword===this.state.newPassword){
+            AuthHandle._showToastSuccessFail('Update failed, old password and new password are the same!');
+            return;
+        }
+        this.reauthenticate(this.state.oldPassword).then(() => {
+            var user = firebase.auth().currentUser;
+            if (this.state.newPassword!==this.state.reNewPassword){
+                AuthHandle._showToastSuccessFail('Update failed, the two new password below does not match each other!');
+                return;
+            }
+                user.updatePassword(this.state.newPassword).then(() => {
+                AuthHandle._showToastSuccessFail('Updated your password')
+                }).catch((error) => { console.log(error.message); });
+                }).catch((error) => { console.log(error.message) });
+            
+    }
+
+
     handlerLogOut() {
         const user = firebase.auth().currentUser;
         if ( user!= null) {
@@ -180,12 +212,20 @@ export default class ProfileScreen extends Component{
                             <View style={Css.editProfile}>
                                 <TextInput placeholder="Name" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(newName)=>{this.setState({newName})}}/>
                                 <TextInput placeholder="Phone" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(newPhone)=>this.setState({newPhone})}/>
-                                <TouchableOpacity style={Css.buttonUpdate} onPress={()=>this.updateProfile()}><Text style={Css.textButton}>  Update</Text></TouchableOpacity>
+                                <TouchableOpacity style={Css.buttonUpdate} onPress={()=>this.updateProfile()}><Text style={Css.textButton}>Update</Text></TouchableOpacity>
                             </View>
                         </View>}
                     </View>
                     <View style={Css.containerSetting}>
-                        <Item avatarItem='md-create' titleItem='Change Password'/>
+                        <Item avatarItem='md-create' titleItem='Change Password' onPress={()=>this.showChangePassword()}/>
+                        { this.state.showChangePassword && <View style={Css.profileInfor}>
+                            <View style={Css.editProfile}>
+                            <TextInput placeholder="Old Password" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(oldPassword)=>{this.setState({oldPassword})}}/>
+                            <TextInput placeholder="New Password" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(newPassword)=>{this.setState({newPassword})}}/>
+                            <TextInput placeholder="Re-type New Password" style={Css.inputs} underlineColorAndroid='transparent' onChangeText={(reNewPassword)=>{this.setState({reNewPassword})}}/>
+                            <TouchableOpacity style={Css.buttonUpdate} onPress={()=>this.changePassword()}><Text style={Css.textButton}>Change Password</Text></TouchableOpacity>
+                         </View>
+                         </View>}
                     </View>
                     <View style={Css.containerSetting}>
                         <Item avatarItem='md-person' titleItem='Verifing Status'/>

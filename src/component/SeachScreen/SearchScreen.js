@@ -59,6 +59,7 @@ export default class SearchScreen extends Component{
                                         placeholderTextColor="#515151"
                                         underlineColorAndroid='transparent'
                                         placeholder={'Search now'}
+                                        value={searchText}
                                         onChangeText={(searchText)=>{
                                             this.setState({searchText})
                                         }}

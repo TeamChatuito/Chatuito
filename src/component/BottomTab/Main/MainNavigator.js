@@ -9,7 +9,6 @@ export default MainNavigator = createMaterialTopTabNavigator(
         Messages:{screen:Messages},
         Active:{screen:Active},
         Groups:{screen:Groups},
-        Calls:{screen:Calls},
     },
 
     {

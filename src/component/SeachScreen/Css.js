@@ -28,6 +28,7 @@ export default Css = StyleSheet.create({
         alignItems:'center',
         width: '10%',
         height:'100%',
+        marginTop:10
     },
     avatarStyle:{
         height:25,

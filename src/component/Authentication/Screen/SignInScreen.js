@@ -37,9 +37,9 @@ export default class SignInScreen extends Component {
                    .auth()
                    .signInWithEmailAndPassword(email, password)
                    .then(() => {
-                       AllHandle._showToastSuccessFail('Logged in successfully !')
+                       AllHandle._showToastSuccessFail('Logged in successfully!')
                    })
-                   .catch(() => AllHandle._showToastErrorOrNotthing('Wrong Username or Password !'))
+                   .catch(() => AllHandle._showToastErrorOrNotthing('Username or Password is wrong!'))
            }
        }
        catch (e) {
@@ -60,8 +60,8 @@ export default class SignInScreen extends Component {
             firebase
                 .auth()
                 .sendPasswordResetEmail(this.state.emailResetPassword.trim())
-                .then(() => AllHandle._showToastSuccessFail('Send to your email successfully. Please check your mail'))
-                .catch(() => AllHandle._showToastSuccessFail('Can\'t send to your email to reset password '));
+                .then(() => AllHandle._showToastSuccessFail('Send to your email successfully. Please check your email'))
+                .catch(() => AllHandle._showToastSuccessFail('Can\'t send to your email to reset password'));
             this.setState({ dialogVisible: false });
     };
 
