@@ -9,7 +9,7 @@ import {
 import firebase from 'react-native-firebase'
 import Css from "./Css";
 import StatusActiveUser from '../Active/StatusActiveUser'
-
+import LinearGradient from 'react-native-linear-gradient'
 //ClassItem hiển thị trong Flatlist
 class FlatListItemMessager extends Component{
     constructor(props){
@@ -145,7 +145,9 @@ export default class Messages extends Component{
     render(){
         //console.log(this.state.uidFriend);
         return(
-            <View style={Css.containerMessages}>
+            <LinearGradient colors={['#fdfbfb','#ebedee']}
+            start={{ x: 1, y: 1 }} 
+            end={{x:0,y:0}}  style={Css.containerMessages}>
                 <View style={Css.containerFlatList}>
                     <FlatList
                     data={this.state.uidFriend}
@@ -153,7 +155,7 @@ export default class Messages extends Component{
                     renderItem={this.renderItem}
                 />
                 </View>
-            </View>
+            </LinearGradient>
         )
     }
 }

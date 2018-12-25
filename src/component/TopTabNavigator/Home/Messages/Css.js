@@ -16,10 +16,13 @@ export default Css = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'row',
-        marginTop: 8,
         marginLeft: 6,
-        marginBottom: 8,
-        marginRight:6       
+        marginBottom: 1,
+        marginRight:6,
+        marginTop:4,
+        backgroundColor:'#fff',
+        borderRadius:10,
+        padding:5   
     },
     containerAvatar:{
         flex:1,

@@ -15,7 +15,7 @@ export default MainNavigator = createMaterialTopTabNavigator(
         tabBarOptions:{
 
             style:{
-                backgroundColor:'#f1f1f1',
+                backgroundColor:'#fff',
             
             },
             labelStyle:{
