@@ -58,7 +58,8 @@ export default Css = StyleSheet.create({
         fontSize:16,
         color:'#000000',
         borderRadius:10,
-        paddingLeft:20
+        paddingLeft:20,
+        fontStyle:'italic'
     },
     textInputandButton:{
         height:50,

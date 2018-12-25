@@ -26,7 +26,7 @@ export default class SearchScreen extends Component{
         var user = firebase.auth().currentUser;
         console.log(user);
         var dataRef = firebase.database().ref('/people');
-        dataRef.orderByChild('searchable').startAt(this.state.searchText).endAt(this.state.searchText).on('value',snap=>{
+        dataRef.orderByChild("name").equalTo(this.state.searchText).on('value',snap=>{
             var items=[];
             snap.forEach(child=>{
                 if (child.val().email!= user.email)
@@ -47,6 +47,7 @@ export default class SearchScreen extends Component{
     
     
     render(){
+        const {navigate} = this.props.navigation;
         return(
             <LinearGradient
                             colors={['#fdfbfb','#ebedee']}
@@ -60,7 +61,8 @@ export default class SearchScreen extends Component{
                                         keyboardType='default'
                                         placeholderTextColor="#515151"
                                         underlineColorAndroid='transparent'
-                                        placeholder={'Input name'}
+                                        placeholder={"Write something"}
+                                        value={this.state.searchText}
                                         onChangeText={(searchText)=>{
                                             this.setState({searchText})
                                         }}
