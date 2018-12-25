@@ -6,7 +6,7 @@
 
 1. [Chức năng](#chức-năng)
 
-	1. [Đăng nhập / Đăng ký](#đăng-nhập-/-đăng-ký)
+	1. [Đăng nhập / Đăng ký](#đăng-nhập)
 	1. [Xem bạn bè đang online](#xem-bạn-bè-đang-online)
 	1. [Chat nhóm](#chat-nhóm)
 	1. [Chat với bạn bè](#chat-với-bạn-bè)
