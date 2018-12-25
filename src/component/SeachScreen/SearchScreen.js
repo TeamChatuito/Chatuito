@@ -26,8 +26,9 @@ export default class SearchScreen extends Component{
         var user = firebase.auth().currentUser;
         console.log(user);
         var dataRef = firebase.database().ref('/people');
-        dataRef.orderByChild("name").equalTo(this.state.searchText).on('value',snap=>{
-            var items=[];
+        //dataRef.orderByChild("name").equalTo(this.state.searchText).on('value',snap=>{
+        dataRef.orderByChild("name").startAt(this.state.searchText).endAt(this.state.searchText + "\uf8ff").on('value',snap=>{    
+        var items=[];
             snap.forEach(child=>{
                 if (child.val().email!= user.email)
                     items.push({
