@@ -79,15 +79,17 @@ Android SDK: 23
 
 ## Tác giả
 
-Nguyễn Duy Anh
+Vũ Ngọc Duy Anh - 16520062
 
-Nguyễn Tiến Đạt
+Nguyễn Tiến Đạt - 16520199
 
-Trần Minh Hiếu
+Trần Minh Hiếu - 16520415
 
 ## Giấy phép
 
 Apache 2.0
+
+## Giảng viên hướng dẫn : Huỳnh Tuấn Anh
 
 
 
