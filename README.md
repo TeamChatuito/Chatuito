@@ -19,38 +19,38 @@
 
 4. [Tác giả](#tác-giả)
 
-5. [Giấy phép](#giấy phép)
+5. [Giấy phép](#giấy-phép)
 
 ## Chức năng
 
 ### Đăng nhập / Đăng ký
 
-* Đăng nhập 
+#### Đăng nhập 
 
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213404.png" height="480" width="270">
 </p>
 
-* Đăng ký
+#### Đăng ký
 
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213409.png" height="480" width="270">
 </p>
 
-* Xem bạn bè đang online
+#### Xem bạn bè đang online
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213531.png" height="480" width="270">
 </p>
 
-* Chat nhóm
+#### Chat nhóm
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213536.png" height="480" width="270">
 </p>
 
-* Chat với bạn bè 
+#### Chat với bạn bè 
 
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213558.png" height="480" width="270">
 </p>
 
-* Map 
+#### Map 
 
-* Gallery 
+#### Gallery 
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213839.png" height="480" width="270"></p>
 
 ## Yêu cầu thiết bị
