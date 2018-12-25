@@ -16,6 +16,7 @@ export default class SearchScreen extends Component{
             test:'',
             searchText:''
         }
+        this.listenForItems=this.listenForItems.bind(this);
     }
     getRef(){
         return firebase.database.ref();
@@ -64,7 +65,7 @@ export default class SearchScreen extends Component{
                                             this.setState({searchText})
                                         }}
                                         />
-                            <TouchableOpacity style={Css.buttonSearch}>
+                            <TouchableOpacity style={Css.buttonSearch} onPress={this.listenForItems}>
                                         <Text style={{color:'#fff'}}>Search</Text>
                             </TouchableOpacity>
                             </View>
