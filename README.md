@@ -49,6 +49,8 @@
 </p>
 
 #### Map 
+<p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/m.png" height="480" width="270">
+</p>
 
 #### Gallery 
 <p align="center"><img src="https://raw.githubusercontent.com/danhy989/Chatuito/master/Resources/Screenshot_20181225-213839.png" height="480" width="270"></p>
