@@ -228,7 +228,7 @@ export default class ProfileScreen extends Component{
                          </View>}
                     </View>
                     <View style={Css.containerSetting}>
-                        <Item avatarItem='md-person' titleItem='Verifing Status'/>
+                        <Item avatarItem='md-person' titleItem='Verifing Status: Verified!'/>
                     </View>
                 </View>
 

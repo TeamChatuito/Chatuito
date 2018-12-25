@@ -15,15 +15,14 @@ export default Css = StyleSheet.create({
     flexDirection: "row",
     margin: 5,
     marginBottom:0,
-    backgroundColor:'#fff',
     alignItems:'center',
     borderRadius:5,
     height:50,
     justifyContent:'center',
-    backgroundColor:'#28D8A1'
+    backgroundColor:'#fff',
   },
   myFriends: {
-    color: '#fff',
+    color: '#000',
     fontSize: 16,
   },
   profileContainer: {
