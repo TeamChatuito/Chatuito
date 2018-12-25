@@ -65,7 +65,7 @@ export default styles = StyleSheet.create({
     borderRadius:10,
     width:'95%',
     height:40,
-    marginTop:10,
+    marginTop:5,
     alignSelf:'center',
     textAlign:'center',
     paddingLeft:10,
