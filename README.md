@@ -89,7 +89,7 @@ Trần Minh Hiếu - 16520415
 
 Apache 2.0
 
-## Giáo viên hướng dẫn : Huỳnh Tuấn Anh
+## Giảng viên hướng dẫn : Huỳnh Tuấn Anh
 
 
 
